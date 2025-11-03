@@ -28,19 +28,21 @@ public class Product {
     public String getName(){
         return this.name;
     }
-    public double getPrice() {
-        return this.price;
-    }
-    public int getQuantity(){
-        return this.quantity;
-    }
-
     public void setName(String name){
         this.name = name;
+    }
+
+    public double getPrice() {
+        return this.price;
     }
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public int getQuantity(){
+        return this.quantity;
+    }
+
 
     public double totalValueInStock() {
         return price * quantity;
