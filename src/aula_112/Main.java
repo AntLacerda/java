@@ -1,0 +1,32 @@
+package aula_112;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDate d04 = LocalDate.parse("2025-11-17");
+        LocalDateTime d05 = LocalDateTime.parse("2025-11-17T14:25:00");
+        Instant d06 = Instant.parse("2025-11-17T14:25:00Z");
+
+        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
+        DateTimeFormatter fmt4 = DateTimeFormatter.ISO_DATE_TIME;
+        DateTimeFormatter fmt5 = DateTimeFormatter.ISO_INSTANT;
+
+        System.out.println("D04: " + d04.format(fmt1));
+        System.out.println("D04: " + fmt1.format(d04));
+
+        System.out.println("D05: " + d05.format(fmt1));
+        System.out.println("D05: " + d05.format(fmt2));
+        System.out.println("D05: " + d05.format(fmt4));
+
+        System.out.println("D06: " + fmt3.format(d06));
+        System.out.println("D06: " + fmt4.format(d06));
+
+    }
+}
